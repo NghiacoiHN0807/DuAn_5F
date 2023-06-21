@@ -1,16 +1,34 @@
 package com.example.fullstackbackend.entity;
 
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Table(name = "images")
 public class Images {
     @Id
-    @Column(name = "id_images")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idImages;
 
-    @Column(name = "id_ctsp")
-    private Integer idCtsp;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_ctsp", referencedColumnName = "id_ctsp")
+    private ChiTietSanPham idCtsp;
 
     @Column(name = "images")
     private String images;
@@ -18,35 +36,4 @@ public class Images {
     @Column(name = "trang_thai")
     private Integer trangThai;
 
-    public Integer getIdImages() {
-        return this.idImages;
-    }
-
-    public void setIdImages(Integer idImages) {
-        this.idImages = idImages;
-    }
-
-    public Integer getIdCtsp() {
-        return this.idCtsp;
-    }
-
-    public void setIdCtsp(Integer idCtsp) {
-        this.idCtsp = idCtsp;
-    }
-
-    public String getImages() {
-        return this.images;
-    }
-
-    public void setImages(String images) {
-        this.images = images;
-    }
-
-    public Integer getTrangThai() {
-        return this.trangThai;
-    }
-
-    public void setTrangThai(Integer trangThai) {
-        this.trangThai = trangThai;
-    }
 }

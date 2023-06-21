@@ -9,7 +9,7 @@ import java.util.Optional;
 public interface ChatlieuSevice {
     List<ChatLieu> getAll();
 
-    Page<ChatLieu> ChatlieuPage(Integer pageNo, Integer size);
+    Page<ChatLieu> chatlieuPage(Integer pageNo, Integer size);
 
     void add(ChatLieu add);
 

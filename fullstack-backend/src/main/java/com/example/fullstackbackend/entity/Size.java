@@ -21,6 +21,7 @@ import lombok.Setter;
 public class Size {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_size")
     private Integer idSize;
 
     @Column(name = "ma_size")

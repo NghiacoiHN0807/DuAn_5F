@@ -26,6 +26,7 @@ import java.math.BigDecimal;
 public class ChiTietSanPham {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_ctsp")
     private Integer idCtsp;
 
     @Column(name = "ma_ctsp")

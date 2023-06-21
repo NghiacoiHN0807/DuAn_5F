@@ -26,6 +26,7 @@ import java.time.LocalDate;
 public class HoaDon {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_hd")
     private Integer idHd;
 
     @ManyToOne(fetch = FetchType.LAZY)
@@ -33,7 +34,7 @@ public class HoaDon {
     private TaiKhoan idTaiKhoan;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_tai_khoan", referencedColumnName = "id_tai_khoan")
+    @JoinColumn(name = "id_httt", referencedColumnName = "id_httt")
     private HinhThucThanhToan idHttt;
 
     @Column(name = "ma_hd")

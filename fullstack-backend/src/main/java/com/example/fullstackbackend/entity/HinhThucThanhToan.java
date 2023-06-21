@@ -21,6 +21,7 @@ import lombok.Setter;
 public class HinhThucThanhToan {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_httt")
     private Integer idHttt;
 
     @Column(name = "hinh_thuc")

@@ -21,6 +21,7 @@ import lombok.Setter;
 public class LoaiSp {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_lsp")
     private Integer idLoaisp;
 
     @Column(name = "ma_lsp")

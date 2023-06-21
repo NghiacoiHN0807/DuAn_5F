@@ -1,6 +1,6 @@
 package com.example.fullstackbackend.controller;
 
-import com.example.fullstackbackend.entity.Sanpham;
+import com.example.fullstackbackend.entity.SanPham;
 import com.example.fullstackbackend.services.SanPhamSevice;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,20 +26,20 @@ public class SanPhamController {
     @GetMapping("view-all")
     public String viewAll(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "5") Integer size,
                           @RequestParam("p") Optional<Integer> p, Model model) {
-        Sanpham chatlieu = new Sanpham();
+        SanPham chatlieu = new SanPham();
         model.addAttribute("add", chatlieu);
 
-        Page<Sanpham> xuatxus = sanPhamSevice.chatlieuPage(p.orElse(page), size);
+        Page<SanPham> xuatxus = sanPhamSevice.chatlieuPage(p.orElse(page), size);
         model.addAttribute("xuatxus", xuatxus);
         return "SanPham";
     }
 
     @PostMapping("add")
-    public String add(@Valid @ModelAttribute("add") Sanpham xuatxu,
+    public String add(@Valid @ModelAttribute("add") SanPham xuatxu,
                       BindingResult bindingResult, @RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "5") Integer size,
                       @RequestParam("p") Optional<Integer> p, Model model) {
         if (bindingResult.hasErrors()) {
-            Page<Sanpham> xuatxus = sanPhamSevice.chatlieuPage(p.orElse(page), size);
+            Page<SanPham> xuatxus = sanPhamSevice.chatlieuPage(p.orElse(page), size);
             model.addAttribute("xuatxus", xuatxus);
             return "SanPham";
         } else {
@@ -51,13 +51,13 @@ public class SanPhamController {
     @GetMapping("detail/{id}")
     public String detail(@PathVariable("id") Integer id, @RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "5") Integer size, @RequestParam("p") Optional<Integer> p, Model model) {
 
-        Sanpham xuatxu = new Sanpham();
+        SanPham xuatxu = new SanPham();
         model.addAttribute("add", xuatxu);
 
-        Optional<Sanpham> xuatxu1 = sanPhamSevice.detail(id);
+        Optional<SanPham> xuatxu1 = sanPhamSevice.detail(id);
         model.addAttribute("getOne", xuatxu1.get());
 
-        Page<Sanpham> chatlieus = sanPhamSevice.chatlieuPage(p.orElse(page), size);
+        Page<SanPham> chatlieus = sanPhamSevice.chatlieuPage(p.orElse(page), size);
         model.addAttribute("xuatxus", chatlieus);
 
         return "SanPham";
@@ -72,17 +72,17 @@ public class SanPhamController {
     @GetMapping("view-update/{id}")
     public String viewUpdate(@PathVariable("id") Integer id, Model model) {
 
-        Sanpham xuatxu = new Sanpham();
+        SanPham xuatxu = new SanPham();
         model.addAttribute("update", xuatxu);
 
-        Optional<Sanpham> chatlieu = sanPhamSevice.detail(id);
+        Optional<SanPham> chatlieu = sanPhamSevice.detail(id);
         model.addAttribute("getOne", chatlieu.get());
 
         return "Update-SanPham";
     }
 
     @PostMapping("update")
-    public String update(@ModelAttribute("update") Sanpham xuatxu) {
+    public String update(@ModelAttribute("update") SanPham xuatxu) {
         sanPhamSevice.update(xuatxu);
         return "redirect:/san-pham/view-all";
     }

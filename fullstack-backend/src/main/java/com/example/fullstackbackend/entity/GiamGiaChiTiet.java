@@ -1,19 +1,41 @@
 package com.example.fullstackbackend.entity;
 
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.math.BigDecimal;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Table(name = "giam_gia_chi_tiet")
 public class GiamGiaChiTiet {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_ggct")
     private Integer idGgct;
 
-    @Column(name = "id_ctsp")
-    private Integer idCtsp;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_ctsp", referencedColumnName = "id_ctsp")
+    private ChiTietSanPham idCtsp;
 
-    @Column(name = "id_giam_gia")
-    private Integer idGiamGia;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_giam_gia", referencedColumnName = "id_giam_gia")
+    private GiamGia idGiamGia;
 
     @Column(name = "don_gia")
     private BigDecimal donGia;
@@ -23,52 +45,4 @@ public class GiamGiaChiTiet {
 
     @Column(name = "trang_thai")
     private Integer trangThai;
-
-    public Integer getIdGgct() {
-        return this.idGgct;
-    }
-
-    public void setIdGgct(Integer idGgct) {
-        this.idGgct = idGgct;
-    }
-
-    public Integer getIdCtsp() {
-        return this.idCtsp;
-    }
-
-    public void setIdCtsp(Integer idCtsp) {
-        this.idCtsp = idCtsp;
-    }
-
-    public Integer getIdGiamGia() {
-        return this.idGiamGia;
-    }
-
-    public void setIdGiamGia(Integer idGiamGia) {
-        this.idGiamGia = idGiamGia;
-    }
-
-    public BigDecimal getDonGia() {
-        return this.donGia;
-    }
-
-    public void setDonGia(BigDecimal donGia) {
-        this.donGia = donGia;
-    }
-
-    public BigDecimal getSoTienConLai() {
-        return this.soTienConLai;
-    }
-
-    public void setSoTienConLai(BigDecimal soTienConLai) {
-        this.soTienConLai = soTienConLai;
-    }
-
-    public Integer getTrangThai() {
-        return this.trangThai;
-    }
-
-    public void setTrangThai(Integer trangThai) {
-        this.trangThai = trangThai;
-    }
 }

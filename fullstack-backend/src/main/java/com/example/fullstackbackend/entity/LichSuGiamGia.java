@@ -1,19 +1,38 @@
 package com.example.fullstackbackend.entity;
 
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Table(name = "lich_su_giam_gia")
 public class LichSuGiamGia {
     @Id
-    @Column(name = "id_lsgg")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idLsgg;
 
-    @Column(name = "id_hd")
-    private Integer idHd;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_hd", referencedColumnName = "id_hd")
+    private HoaDon idHd;
 
-    @Column(name = "id_ggct")
-    private Integer idGgct;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_ggct", referencedColumnName = "id_ggct")
+    private GiamGiaChiTiet idGgct;
 
     @Column(name = "gia_ban_dau")
     private String giaBanDau;
@@ -24,51 +43,4 @@ public class LichSuGiamGia {
     @Column(name = "ngay_mua")
     private String ngayMua;
 
-    public Integer getIdLsgg() {
-        return this.idLsgg;
-    }
-
-    public void setIdLsgg(Integer idLsgg) {
-        this.idLsgg = idLsgg;
-    }
-
-    public Integer getIdHd() {
-        return this.idHd;
-    }
-
-    public void setIdHd(Integer idHd) {
-        this.idHd = idHd;
-    }
-
-    public Integer getIdGgct() {
-        return this.idGgct;
-    }
-
-    public void setIdGgct(Integer idGgct) {
-        this.idGgct = idGgct;
-    }
-
-    public String getGiaBanDau() {
-        return this.giaBanDau;
-    }
-
-    public void setGiaBanDau(String giaBanDau) {
-        this.giaBanDau = giaBanDau;
-    }
-
-    public String getGiaDaGiam() {
-        return this.giaDaGiam;
-    }
-
-    public void setGiaDaGiam(String giaDaGiam) {
-        this.giaDaGiam = giaDaGiam;
-    }
-
-    public String getNgayMua() {
-        return this.ngayMua;
-    }
-
-    public void setNgayMua(String ngayMua) {
-        this.ngayMua = ngayMua;
-    }
 }

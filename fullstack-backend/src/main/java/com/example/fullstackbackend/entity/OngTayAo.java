@@ -21,6 +21,7 @@ import lombok.Setter;
 public class OngTayAo {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_tay_ao")
     private Integer idTayAo;
 
     @Column(name = "ma_tay_ao")

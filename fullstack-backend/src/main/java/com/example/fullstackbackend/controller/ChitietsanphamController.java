@@ -1,12 +1,12 @@
 package com.example.fullstackbackend.controller;
 
-import com.example.fullstackbackend.entity.Chatlieu;
-import com.example.fullstackbackend.entity.Chitietsanpham;
-import com.example.fullstackbackend.entity.Loaisp;
-import com.example.fullstackbackend.entity.Mausac;
-import com.example.fullstackbackend.entity.Sanpham;
+import com.example.fullstackbackend.entity.ChatLieu;
+import com.example.fullstackbackend.entity.ChiTietSanPham;
+import com.example.fullstackbackend.entity.LoaiSp;
+import com.example.fullstackbackend.entity.MauSac;
+import com.example.fullstackbackend.entity.SanPham;
 import com.example.fullstackbackend.entity.Size;
-import com.example.fullstackbackend.entity.Xuatxu;
+import com.example.fullstackbackend.entity.XuatXu;
 import com.example.fullstackbackend.services.ChatlieuSevice;
 import com.example.fullstackbackend.services.ChitietsanphamSevice;
 import com.example.fullstackbackend.services.LoaispSevice;
@@ -58,61 +58,61 @@ public class ChitietsanphamController {
                           @RequestParam(defaultValue = "5") Integer size,
                           @RequestParam("p") Optional<Integer> p,
                           Model model) {
-        Chitietsanpham chatlieu = new Chitietsanpham();
+        ChiTietSanPham chatlieu = new ChiTietSanPham();
         model.addAttribute("add", chatlieu);
 
-        List<Chatlieu> chatlieus = chatlieuSevice.getAll();
-        model.addAttribute("chatlieus",chatlieus);
+        List<ChatLieu> chatlieus = chatlieuSevice.getAll();
+        model.addAttribute("chatlieus", chatlieus);
 
-        List<Loaisp> loaisps = loaispSevice.getAll();
-        model.addAttribute("loaisps",loaisps);
+        List<LoaiSp> loaisps = loaispSevice.getAll();
+        model.addAttribute("loaisps", loaisps);
 
-        List<Sanpham> sanphams = sanPhamSevice.getAll();
-        model.addAttribute("sanphams",sanphams);
+        List<SanPham> sanphams = sanPhamSevice.getAll();
+        model.addAttribute("sanphams", sanphams);
 
         List<Size> sizes = sizeSevice.getAll();
-        model.addAttribute("sizes",sizes);
+        model.addAttribute("sizes", sizes);
 
-        List<Xuatxu> xuatxus1 = xuatxuSevice.getAll();
-        model.addAttribute("xuatxus1",xuatxus1);
+        List<XuatXu> xuatxus1 = xuatxuSevice.getAll();
+        model.addAttribute("xuatxus1", xuatxus1);
 
-        List<Mausac> mausacs = mausacSevice.getAll();
-        model.addAttribute("mausacs",mausacs);
+        List<MauSac> mausacs = mausacSevice.getAll();
+        model.addAttribute("mausacs", mausacs);
 
-        Page<Chitietsanpham> xuatxus = chitietsanphamSevice.chatlieuPage(p.orElse(page), size);
+        Page<ChiTietSanPham> xuatxus = chitietsanphamSevice.chatlieuPage(p.orElse(page), size);
         model.addAttribute("xuatxus", xuatxus);
         return "ChiTietSanPham";
     }
 
     @PostMapping("add")
-    public String add(@Valid @ModelAttribute("add") Chitietsanpham xuatxu,
+    public String add(@Valid @ModelAttribute("add") ChiTietSanPham xuatxu,
                       BindingResult bindingResult, Model model,
                       @RequestParam(defaultValue = "0") Integer page,
                       @RequestParam(defaultValue = "5") Integer size,
                       @RequestParam("p") Optional<Integer> p) {
         if (bindingResult.hasErrors()) {
-            List<Chatlieu> chatlieus = chatlieuSevice.getAll();
-            model.addAttribute("chatlieus",chatlieus);
+            List<ChatLieu> chatlieus = chatlieuSevice.getAll();
+            model.addAttribute("chatlieus", chatlieus);
 
-            List<Loaisp> loaisps = loaispSevice.getAll();
-            model.addAttribute("loaisps",loaisps);
+            List<LoaiSp> loaisps = loaispSevice.getAll();
+            model.addAttribute("loaisps", loaisps);
 
-            List<Sanpham> sanphams = sanPhamSevice.getAll();
-            model.addAttribute("sanphams",sanphams);
+            List<SanPham> sanphams = sanPhamSevice.getAll();
+            model.addAttribute("sanphams", sanphams);
 
             List<Size> sizes = sizeSevice.getAll();
-            model.addAttribute("sizes",sizes);
+            model.addAttribute("sizes", sizes);
 
-            List<Xuatxu> xuatxus1 = xuatxuSevice.getAll();
-            model.addAttribute("xuatxus1",xuatxus1);
+            List<XuatXu> xuatxus1 = xuatxuSevice.getAll();
+            model.addAttribute("xuatxus1", xuatxus1);
 
-            List<Mausac> mausacs = mausacSevice.getAll();
-            model.addAttribute("mausacs",mausacs);
+            List<MauSac> mausacs = mausacSevice.getAll();
+            model.addAttribute("mausacs", mausacs);
 
-            Page<Chitietsanpham> xuatxus = chitietsanphamSevice.chatlieuPage(p.orElse(page), size);
+            Page<ChiTietSanPham> xuatxus = chitietsanphamSevice.chatlieuPage(p.orElse(page), size);
             model.addAttribute("xuatxus", xuatxus);
             return "ChiTietSanPham";
-        }else {
+        } else {
             chitietsanphamSevice.add(xuatxu);
             return "redirect:/chi-tiet-san-pham/view-all";
         }
@@ -121,31 +121,31 @@ public class ChitietsanphamController {
     @GetMapping("detail/{id}")
     public String detail(@PathVariable("id") Integer id, @RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "5") Integer size, @RequestParam("p") Optional<Integer> p, Model model) {
 
-        Chitietsanpham xuatxu = new Chitietsanpham();
+        ChiTietSanPham xuatxu = new ChiTietSanPham();
         model.addAttribute("add", xuatxu);
 
-        List<Chatlieu> chatlieus = chatlieuSevice.getAll();
-        model.addAttribute("chatlieus",chatlieus);
+        List<ChatLieu> chatlieus = chatlieuSevice.getAll();
+        model.addAttribute("chatlieus", chatlieus);
 
-        List<Loaisp> loaisps = loaispSevice.getAll();
-        model.addAttribute("loaisps",loaisps);
+        List<LoaiSp> loaisps = loaispSevice.getAll();
+        model.addAttribute("loaisps", loaisps);
 
-        List<Sanpham> sanphams = sanPhamSevice.getAll();
-        model.addAttribute("sanphams",sanphams);
+        List<SanPham> sanphams = sanPhamSevice.getAll();
+        model.addAttribute("sanphams", sanphams);
 
         List<Size> sizes = sizeSevice.getAll();
-        model.addAttribute("sizes",sizes);
+        model.addAttribute("sizes", sizes);
 
-        List<Xuatxu> xuatxus1 = xuatxuSevice.getAll();
-        model.addAttribute("xuatxus1",xuatxus1);
+        List<XuatXu> xuatxus1 = xuatxuSevice.getAll();
+        model.addAttribute("xuatxus1", xuatxus1);
 
-        List<Mausac> mausacs = mausacSevice.getAll();
-        model.addAttribute("mausacs",mausacs);
+        List<MauSac> mausacs = mausacSevice.getAll();
+        model.addAttribute("mausacs", mausacs);
 
-        Optional<Chitietsanpham> xuatxu1 = chitietsanphamSevice.detail(id);
+        Optional<ChiTietSanPham> xuatxu1 = chitietsanphamSevice.detail(id);
         model.addAttribute("getOne", xuatxu1.get());
 
-        Page<Chitietsanpham> chatlieus1 = chitietsanphamSevice.chatlieuPage(p.orElse(page), size);
+        Page<ChiTietSanPham> chatlieus1 = chitietsanphamSevice.chatlieuPage(p.orElse(page), size);
         model.addAttribute("xuatxus", chatlieus1);
 
         return "ChiTietSanPham";
@@ -160,34 +160,37 @@ public class ChitietsanphamController {
     @GetMapping("view-update/{id}")
     public String viewUpdate(@PathVariable("id") Integer id, Model model) {
 
-        Chitietsanpham xuatxu = new Chitietsanpham();
+        ChiTietSanPham xuatxu = new ChiTietSanPham();
         model.addAttribute("update", xuatxu);
-        List<Chatlieu> chatlieus = chatlieuSevice.getAll();
-        model.addAttribute("chatlieus",chatlieus);
+        List<ChatLieu> chatlieus = chatlieuSevice.getAll();
+        model.addAttribute("chatlieus", chatlieus);
 
-        List<Loaisp> loaisps = loaispSevice.getAll();
-        model.addAttribute("loaisps",loaisps);
+        List<LoaiSp> loaisps = loaispSevice.getAll();
+        model.addAttribute("loaisps", loaisps);
 
-        List<Sanpham> sanphams = sanPhamSevice.getAll();
-        model.addAttribute("sanphams",sanphams);
+        List<SanPham> sanphams = sanPhamSevice.getAll();
+        model.addAttribute("sanphams", sanphams);
 
         List<Size> sizes = sizeSevice.getAll();
-        model.addAttribute("sizes",sizes);
+        model.addAttribute("sizes", sizes);
 
-        List<Xuatxu> xuatxus1 = xuatxuSevice.getAll();
-        model.addAttribute("xuatxus1",xuatxus1);
+        List<XuatXu> xuatxus1 = xuatxuSevice.getAll();
+        model.addAttribute("xuatxus1", xuatxus1);
 
-        List<Mausac> mausacs = mausacSevice.getAll();
-        model.addAttribute("mausacs",mausacs);
+        List<MauSac> mausacs = mausacSevice.getAll();
+        model.addAttribute("mausacs", mausacs);
 
-        Optional<Chitietsanpham> chatlieu = chitietsanphamSevice.detail(id);
+        Optional<ChiTietSanPham> xuatxu1 = chitietsanphamSevice.detail(id);
+        model.addAttribute("getOne", xuatxu1.get());
+
+        Optional<ChiTietSanPham> chatlieu = chitietsanphamSevice.detail(id);
         model.addAttribute("getOne", chatlieu.get());
 
         return "Update-ChiTietSanPham";
     }
 
     @PostMapping("update")
-    public String update(@ModelAttribute("update") Chitietsanpham xuatxu) {
+    public String update(@ModelAttribute("update") ChiTietSanPham xuatxu) {
         chitietsanphamSevice.update(xuatxu);
         return "redirect:/chi-tiet-san-pham/view-all";
     }

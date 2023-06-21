@@ -1,6 +1,6 @@
 package com.example.fullstackbackend.controller;
 
-import com.example.fullstackbackend.entity.Chatlieu;
+import com.example.fullstackbackend.entity.ChatLieu;
 import com.example.fullstackbackend.services.ChatlieuSevice;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,22 +27,22 @@ public class ChatLieuController {
     public String viewAll(@RequestParam(defaultValue = "0") Integer page,
                           @RequestParam(defaultValue = "5") Integer size,
                           @RequestParam("p") Optional<Integer> p, Model model) {
-        Chatlieu chatlieu = new Chatlieu();
+        ChatLieu chatlieu = new ChatLieu();
         model.addAttribute("add", chatlieu);
 
-        Page<Chatlieu> chatlieus = chatlieuSevice.chatlieuPage(p.orElse(page), size);
+        Page<ChatLieu> chatlieus = chatlieuSevice.chatlieuPage(p.orElse(page), size);
         model.addAttribute("chatlieus", chatlieus);
         return "ChatLieu";
     }
 
     @PostMapping("add")
-    public String add(@Valid @ModelAttribute("add") Chatlieu chatlieu,
+    public String add(@Valid @ModelAttribute("add") ChatLieu chatlieu,
                       BindingResult bindingResult, Model model,
                       @RequestParam(defaultValue = "0") Integer page,
                       @RequestParam(defaultValue = "5") Integer size,
                       @RequestParam("p") Optional<Integer> p) {
         if (bindingResult.hasErrors()) {
-            Page<Chatlieu> chatlieus = chatlieuSevice.chatlieuPage(p.orElse(page), size);
+            Page<ChatLieu> chatlieus = chatlieuSevice.chatlieuPage(p.orElse(page), size);
             model.addAttribute("chatlieus", chatlieus);
             return "ChatLieu";
         }else {
@@ -54,13 +54,13 @@ public class ChatLieuController {
     @GetMapping("detail/{id}")
     public String detail(@PathVariable("id") Integer id, @RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "5") Integer size, @RequestParam("p") Optional<Integer> p, Model model) {
 
-        Chatlieu chatlieu1 = new Chatlieu();
+        ChatLieu chatlieu1 = new ChatLieu();
         model.addAttribute("add", chatlieu1);
 
-        Optional<Chatlieu> chatlieu = chatlieuSevice.detail(id);
+        Optional<ChatLieu> chatlieu = chatlieuSevice.detail(id);
         model.addAttribute("getOne", chatlieu.get());
 
-        Page<Chatlieu> chatlieus = chatlieuSevice.chatlieuPage(p.orElse(page), size);
+        Page<ChatLieu> chatlieus = chatlieuSevice.chatlieuPage(p.orElse(page), size);
         model.addAttribute("chatlieus", chatlieus);
 
         return "ChatLieu";
@@ -75,17 +75,17 @@ public class ChatLieuController {
     @GetMapping("view-update/{id}")
     public String viewUpdate(@PathVariable("id") Integer id, Model model) {
 
-        Chatlieu chatlieu1 = new Chatlieu();
+        ChatLieu chatlieu1 = new ChatLieu();
         model.addAttribute("update", chatlieu1);
 
-        Optional<Chatlieu> chatlieu = chatlieuSevice.detail(id);
+        Optional<ChatLieu> chatlieu = chatlieuSevice.detail(id);
         model.addAttribute("getOne", chatlieu.get());
 
         return "Update-ChatLieu";
     }
 
     @PostMapping("update")
-    public String update(@ModelAttribute("update") Chatlieu chatlieu) {
+    public String update(@ModelAttribute("update") ChatLieu chatlieu) {
         chatlieuSevice.update(chatlieu);
         return "redirect:/chat-lieu/view-all";
     }

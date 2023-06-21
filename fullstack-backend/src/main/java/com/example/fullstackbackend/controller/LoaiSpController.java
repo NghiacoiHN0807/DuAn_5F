@@ -1,6 +1,6 @@
 package com.example.fullstackbackend.controller;
 
-import com.example.fullstackbackend.entity.Loaisp;
+import com.example.fullstackbackend.entity.LoaiSp;
 import com.example.fullstackbackend.services.LoaispSevice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -23,16 +23,16 @@ public class LoaiSpController {
 
     @GetMapping("view-all")
     public String viewAll(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "5") Integer size, @RequestParam("p") Optional<Integer> p, Model model) {
-        Loaisp chatlieu = new Loaisp();
+        LoaiSp chatlieu = new LoaiSp();
         model.addAttribute("add", chatlieu);
 
-        Page<Loaisp> chatlieus = loaispSevice.chatlieuPage(p.orElse(page), size);
+        Page<LoaiSp> chatlieus = loaispSevice.chatlieuPage(p.orElse(page), size);
         model.addAttribute("LoaiSP", chatlieus);
         return "LoaiSP";
     }
 
     @PostMapping("add")
-    public String add(@ModelAttribute("add") Loaisp chatlieu) {
+    public String add(@ModelAttribute("add") LoaiSp chatlieu) {
         loaispSevice.add(chatlieu);
         return "redirect:/loai-sp/view-all";
     }
@@ -40,13 +40,13 @@ public class LoaiSpController {
     @GetMapping("detail/{id}")
     public String detail(@PathVariable("id") Integer id, @RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "5") Integer size, @RequestParam("p") Optional<Integer> p, Model model) {
 
-        Loaisp chatlieu1 = new Loaisp();
+        LoaiSp chatlieu1 = new LoaiSp();
         model.addAttribute("add", chatlieu1);
 
-        Optional<Loaisp> chatlieu = loaispSevice.detail(id);
+        Optional<LoaiSp> chatlieu = loaispSevice.detail(id);
         model.addAttribute("getOne", chatlieu.get());
 
-        Page<Loaisp> chatlieus = loaispSevice.chatlieuPage(p.orElse(page), size);
+        Page<LoaiSp> chatlieus = loaispSevice.chatlieuPage(p.orElse(page), size);
         model.addAttribute("LoaiSP", chatlieus);
 
         return "LoaiSP";
@@ -61,17 +61,17 @@ public class LoaiSpController {
     @GetMapping("view-update/{id}")
     public String viewUpdate(@PathVariable("id") Integer id, Model model) {
 
-        Loaisp chatlieu1 = new Loaisp();
+        LoaiSp chatlieu1 = new LoaiSp();
         model.addAttribute("update", chatlieu1);
 
-        Optional<Loaisp> chatlieu = loaispSevice.detail(id);
+        Optional<LoaiSp> chatlieu = loaispSevice.detail(id);
         model.addAttribute("getOne", chatlieu.get());
 
         return "Update-LoaiSP";
     }
 
     @PostMapping("update")
-    public String update(@ModelAttribute("update") Loaisp chatlieu) {
+    public String update(@ModelAttribute("update") LoaiSp chatlieu) {
         loaispSevice.update(chatlieu);
         return "redirect:/loai-sp/view-all";
     }

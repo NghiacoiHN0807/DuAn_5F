@@ -46,7 +46,10 @@ public class XuatxuController {
     }
 
     @GetMapping("detail/{id}")
-    public String detail(@PathVariable("id") Integer id, @RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "5") Integer size, @RequestParam("p") Optional<Integer> p, Model model) {
+    public String detail(@PathVariable("id") Integer id,
+                         @RequestParam(defaultValue = "0") Integer page,
+                         @RequestParam(defaultValue = "5") Integer size, @RequestParam("p")
+                             Optional<Integer> p, Model model) {
 
         XuatXu xuatxu = new XuatXu();
         model.addAttribute("add", xuatxu);

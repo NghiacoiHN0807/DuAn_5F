@@ -1,6 +1,6 @@
 package com.example.fullstackbackend.controller;
 
-import com.example.fullstackbackend.entity.Mausac;
+import com.example.fullstackbackend.entity.MauSac;
 import com.example.fullstackbackend.services.MausacSevice;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -23,16 +23,16 @@ public class MausacController {
 
     @GetMapping("view-all")
     public String viewAll(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "5") Integer size, @RequestParam("p") Optional<Integer> p, Model model) {
-        Mausac chatlieu = new Mausac();
+        MauSac chatlieu = new MauSac();
         model.addAttribute("add", chatlieu);
 
-        Page<Mausac> xuatxus = mausacSevice.chatlieuPage(p.orElse(page), size);
+        Page<MauSac> xuatxus = mausacSevice.chatlieuPage(p.orElse(page), size);
         model.addAttribute("xuatxus", xuatxus);
         return "MauSac";
     }
 
     @PostMapping("add")
-    public String add(@ModelAttribute("add") Mausac xuatxu) {
+    public String add(@ModelAttribute("add") MauSac xuatxu) {
         mausacSevice.add(xuatxu);
         return "redirect:/mau-sac/view-all";
     }
@@ -40,13 +40,13 @@ public class MausacController {
     @GetMapping("detail/{id}")
     public String detail(@PathVariable("id") Integer id, @RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "5") Integer size, @RequestParam("p") Optional<Integer> p, Model model) {
 
-        Mausac xuatxu = new Mausac();
+        MauSac xuatxu = new MauSac();
         model.addAttribute("add", xuatxu);
 
-        Optional<Mausac> xuatxu1 = mausacSevice.detail(id);
+        Optional<MauSac> xuatxu1 = mausacSevice.detail(id);
         model.addAttribute("getOne", xuatxu1.get());
 
-        Page<Mausac> chatlieus = mausacSevice.chatlieuPage(p.orElse(page), size);
+        Page<MauSac> chatlieus = mausacSevice.chatlieuPage(p.orElse(page), size);
         model.addAttribute("xuatxus", chatlieus);
 
         return "MauSac";
@@ -61,17 +61,17 @@ public class MausacController {
     @GetMapping("view-update/{id}")
     public String viewUpdate(@PathVariable("id") Integer id, Model model) {
 
-        Mausac xuatxu = new Mausac();
+        MauSac xuatxu = new MauSac();
         model.addAttribute("update", xuatxu);
 
-        Optional<Mausac> chatlieu = mausacSevice.detail(id);
+        Optional<MauSac> chatlieu = mausacSevice.detail(id);
         model.addAttribute("getOne", chatlieu.get());
 
         return "Update-MauSac";
     }
 
     @PostMapping("update")
-    public String update(@ModelAttribute("update") Mausac xuatxu) {
+    public String update(@ModelAttribute("update") MauSac xuatxu) {
         mausacSevice.update(xuatxu);
         return "redirect:/mau-sac/view-all";
     }

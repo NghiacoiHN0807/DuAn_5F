@@ -21,6 +21,7 @@ import lombok.Setter;
 public class SanPham {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_sp")
     private Integer idSp;
 
     @Column(name = "ma_sp")

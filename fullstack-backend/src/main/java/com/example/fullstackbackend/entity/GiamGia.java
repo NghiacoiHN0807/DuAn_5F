@@ -1,11 +1,29 @@
 package com.example.fullstackbackend.entity;
 
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Table(name = "giam_gia")
 public class GiamGia {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_giam_gia")
     private Integer idGiamGia;
 
@@ -30,67 +48,4 @@ public class GiamGia {
     @Column(name = "trang_thai")
     private Integer trangThai;
 
-    public Integer getIdGiamGia() {
-        return this.idGiamGia;
-    }
-
-    public void setIdGiamGia(Integer idGiamGia) {
-        this.idGiamGia = idGiamGia;
-    }
-
-    public String getMaGiamGia() {
-        return this.maGiamGia;
-    }
-
-    public void setMaGiamGia(String maGiamGia) {
-        this.maGiamGia = maGiamGia;
-    }
-
-    public String getTenChuongTrinh() {
-        return this.tenChuongTrinh;
-    }
-
-    public void setTenChuongTrinh(String tenChuongTrinh) {
-        this.tenChuongTrinh = tenChuongTrinh;
-    }
-
-    public java.sql.Date getNgayBatDau() {
-        return this.ngayBatDau;
-    }
-
-    public void setNgayBatDau(java.sql.Date ngayBatDau) {
-        this.ngayBatDau = ngayBatDau;
-    }
-
-    public java.sql.Date getNgayKetThuc() {
-        return this.ngayKetThuc;
-    }
-
-    public void setNgayKetThuc(java.sql.Date ngayKetThuc) {
-        this.ngayKetThuc = ngayKetThuc;
-    }
-
-    public BigDecimal getMucGiamPhanTram() {
-        return this.mucGiamPhanTram;
-    }
-
-    public void setMucGiamPhanTram(BigDecimal mucGiamPhanTram) {
-        this.mucGiamPhanTram = mucGiamPhanTram;
-    }
-
-    public BigDecimal getMucGiamTienMat() {
-        return this.mucGiamTienMat;
-    }
-
-    public void setMucGiamTienMat(BigDecimal mucGiamTienMat) {
-        this.mucGiamTienMat = mucGiamTienMat;
-    }
-
-    public Integer getTrangThai() {
-        return this.trangThai;
-    }
-
-    public void setTrangThai(Integer trangThai) {
-        this.trangThai = trangThai;
-    }
 }

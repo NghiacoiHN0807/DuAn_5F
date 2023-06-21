@@ -24,7 +24,7 @@ public class ChatlieuServiceImpl implements ChatlieuSevice {
     }
 
     @Override
-    public Page<ChatLieu> ChatlieuPage(Integer pageNo, Integer size) {
+    public Page<ChatLieu> chatlieuPage(Integer pageNo, Integer size) {
         Pageable pageable = PageRequest.of(pageNo, size);
         return chatlieuRepository.findAll(pageable);
     }

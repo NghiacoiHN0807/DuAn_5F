@@ -20,6 +20,7 @@ import lombok.Setter;
 public class ChatLieu {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_cl")
     private Integer idCl;
 
     @Column(name = "ma_cl")

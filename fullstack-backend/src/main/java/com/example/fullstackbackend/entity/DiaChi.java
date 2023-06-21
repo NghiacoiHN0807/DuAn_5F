@@ -1,11 +1,26 @@
 package com.example.fullstackbackend.entity;
 
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Table(name = "dia_chi")
 public class DiaChi {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id_dia_chi")
     private Integer idDiaChi;
 
@@ -33,75 +48,4 @@ public class DiaChi {
     @Column(name = "trang_thai")
     private Integer trangThai;
 
-    public Integer getIdDiaChi() {
-        return this.idDiaChi;
-    }
-
-    public void setIdDiaChi(Integer idDiaChi) {
-        this.idDiaChi = idDiaChi;
-    }
-
-    public String getDiaChiCuThe() {
-        return this.diaChiCuThe;
-    }
-
-    public void setDiaChiCuThe(String diaChiCuThe) {
-        this.diaChiCuThe = diaChiCuThe;
-    }
-
-    public String getPhuongXa() {
-        return this.phuongXa;
-    }
-
-    public void setPhuongXa(String phuongXa) {
-        this.phuongXa = phuongXa;
-    }
-
-    public String getQuanHuyen() {
-        return this.quanHuyen;
-    }
-
-    public void setQuanHuyen(String quanHuyen) {
-        this.quanHuyen = quanHuyen;
-    }
-
-    public String getTinhThanh() {
-        return this.tinhThanh;
-    }
-
-    public void setTinhThanh(String tinhThanh) {
-        this.tinhThanh = tinhThanh;
-    }
-
-    public Integer getLoaiDiaChi() {
-        return this.loaiDiaChi;
-    }
-
-    public void setLoaiDiaChi(Integer loaiDiaChi) {
-        this.loaiDiaChi = loaiDiaChi;
-    }
-
-    public String getSdt() {
-        return this.sdt;
-    }
-
-    public void setSdt(String sdt) {
-        this.sdt = sdt;
-    }
-
-    public String getTenNguoiNhan() {
-        return this.tenNguoiNhan;
-    }
-
-    public void setTenNguoiNhan(String tenNguoiNhan) {
-        this.tenNguoiNhan = tenNguoiNhan;
-    }
-
-    public Integer getTrangThai() {
-        return this.trangThai;
-    }
-
-    public void setTrangThai(Integer trangThai) {
-        this.trangThai = trangThai;
-    }
 }

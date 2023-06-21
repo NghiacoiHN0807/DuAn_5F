@@ -21,6 +21,7 @@ import lombok.Setter;
 public class MauSac {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id_ms")
     private Integer idMs;
 
     @Column(name = "ma_ms")
