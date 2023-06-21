@@ -1,18 +1,18 @@
 package com.example.fullstackbackend.services;
 
-import com.example.fullstackbackend.entity.Chitietsanpham;
+import com.example.fullstackbackend.entity.ChiTietSanPham;
 import org.springframework.data.domain.Page;
 
 import java.util.Optional;
 
 public interface ChitietsanphamSevice {
-    Page<Chitietsanpham> chatlieuPage(Integer pageNo, Integer size);
+    Page<ChiTietSanPham> chatlieuPage(Integer pageNo, Integer size);
 
-    void add(Chitietsanpham add);
+    void add(ChiTietSanPham add);
 
     void delete(Integer id);
 
-    void update(Chitietsanpham update);
+    void update(ChiTietSanPham update);
 
-    Optional<Chitietsanpham> detail(Integer id);
+    Optional<ChiTietSanPham> detail(Integer id);
 }

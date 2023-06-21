@@ -1,21 +1,21 @@
 package com.example.fullstackbackend.services;
 
-import com.example.fullstackbackend.entity.Mausac;
+import com.example.fullstackbackend.entity.MauSac;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface MausacSevice {
-    List<Mausac> getAll();
+    List<MauSac> getAll();
 
-    Page<Mausac> chatlieuPage(Integer pageNo, Integer size);
+    Page<MauSac> chatlieuPage(Integer pageNo, Integer size);
 
-    void add(Mausac add);
+    void add(MauSac add);
 
     void delete(Integer id);
 
-    void update(Mausac update);
+    void update(MauSac update);
 
-    Optional<Mausac> detail(Integer id);
+    Optional<MauSac> detail(Integer id);
 }

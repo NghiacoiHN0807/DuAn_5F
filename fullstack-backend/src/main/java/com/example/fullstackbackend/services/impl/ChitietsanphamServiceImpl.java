@@ -1,6 +1,6 @@
 package com.example.fullstackbackend.services.impl;
 
-import com.example.fullstackbackend.entity.Chitietsanpham;
+import com.example.fullstackbackend.entity.ChiTietSanPham;
 import com.example.fullstackbackend.repository.ChitietsanphamRepository;
 import com.example.fullstackbackend.services.ChitietsanphamSevice;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +17,13 @@ public class ChitietsanphamServiceImpl implements ChitietsanphamSevice {
     @Autowired
     private ChitietsanphamRepository chitietsanphamRepository;
     @Override
-    public Page<Chitietsanpham> chatlieuPage(Integer pageNo, Integer size) {
+    public Page<ChiTietSanPham> chatlieuPage(Integer pageNo, Integer size) {
         Pageable pageable = PageRequest.of(pageNo, size);
         return chitietsanphamRepository.findAll(pageable);
     }
 
     @Override
-    public void add(Chitietsanpham add) {
+    public void add(ChiTietSanPham add) {
         chitietsanphamRepository.save(add);
     }
 
@@ -33,13 +33,13 @@ public class ChitietsanphamServiceImpl implements ChitietsanphamSevice {
     }
 
     @Override
-    public void update(Chitietsanpham update) {
+    public void update(ChiTietSanPham update) {
         chitietsanphamRepository.save(update);
     }
 
     @Override
-    public Optional<Chitietsanpham> detail(Integer id) {
-        Optional<Chitietsanpham> xuatxu = chitietsanphamRepository.findById(id);
+    public Optional<ChiTietSanPham> detail(Integer id) {
+        Optional<ChiTietSanPham> xuatxu = chitietsanphamRepository.findById(id);
         return xuatxu;
     }
 

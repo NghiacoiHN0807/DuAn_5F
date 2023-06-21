@@ -15,82 +15,79 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.time.LocalDate;
 
-
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity
-@Table(name = "hoadon")
-public class Hoadon {
+@Table(name = "hoa_don")
+public class HoaDon {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idhd;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer idHd;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "IDKH", referencedColumnName = "IDKH")
-    private Khachhang idkh;
+    @JoinColumn(name = "id_tai_khoan", referencedColumnName = "id_tai_khoan")
+    private TaiKhoan idTaiKhoan;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "IDNV", referencedColumnName = "IDNV")
-    private Nhanvien idnv;
+    @JoinColumn(name = "id_tai_khoan", referencedColumnName = "id_tai_khoan")
+    private HinhThucThanhToan idHttt;
 
-    @Column(name = "MaHD")
+    @Column(name = "ma_hd")
     private String maHd;
 
-    @Column(name = "NgayTao")
-    private Date ngayTao;
+    @Column(name = "ngay_tao")
+    private LocalDate ngayTao;
 
-    @Column(name = "NgayThanhToan")
-    private Date ngayThanhToan;
+    @Column(name = "ngay_thanh_toan")
+    private LocalDate ngayThanhToan;
 
-    @Column(name = "TongTien")
-    private BigDecimal tongTien;
-
-    @Column(name = "SoTienGiamGia")
+    @Column(name = "so_tien_giam_gia")
     private BigDecimal soTienGiamGia;
 
-    @Column(name = "ThanhTien")
+    @Column(name = "thanh_tien")
     private BigDecimal thanhTien;
 
-    @Column(name = "TienDua")
+    @Column(name = "tien_dua")
     private BigDecimal tienDua;
 
-    @Column(name = "TienThua")
+    @Column(name = "tien_thua")
     private BigDecimal tienThua;
 
-    @Column(name = "TienShip")
+    @Column(name = "tien_ship")
     private BigDecimal tienShip;
 
-    @Column(name = "HinhThucThanhToan")
-    private String hinhThucThanhToan;
+    @Column(name = "tong_tien")
+    private BigDecimal tongTien;
 
-    @Column(name = "TenKH")
+    @Column(name = "ten_kh")
     private String tenKh;
 
-    @Column(name = "SDTKH")
-    private String sdtkh;
+    @Column(name = "sdt_kh")
+    private String sdtKh;
 
-    @Column(name = "TenShip")
+    @Column(name = "ten_ship")
     private String tenShip;
 
-    @Column(name = "SDTShip")
+    @Column(name = "sdt_ship")
     private String sdtShip;
 
-    @Column(name = "DiaChi")
+    @Column(name = "dia_chi")
     private String diaChi;
 
-    @Column(name = "NgayMuonNhan")
-    private Date ngayMuonNhan;
+    @Column(name = "ngay_du_tinh_nhan")
+    private LocalDate ngayDuTinhNhan;
 
-    @Column(name = "NgayGiao")
-    private Date ngayGiao;
+    @Column(name = "nga_bat_dau_giao")
+    private LocalDate ngaBatDauGiao;
 
-    @Column(name = "NgayGiaoThanhCong")
-    private Date ngayGiaoThanhCong;
+    @Column(name = "ngay_giao_thanh_cong")
+    private LocalDate ngayGiaoThanhCong;
 
-    @Column(name = "TrangThai")
+    @Column(name = "trang_thai")
     private Integer trangThai;
+
 }

@@ -1,5 +1,6 @@
+package com.example.fullstackbackend.entity;
 
-import javax.persistence.*;
+
 
 @Entity
 @Table(name = "giam_gia")
@@ -15,10 +16,10 @@ public class GiamGia {
     private String tenChuongTrinh;
 
     @Column(name = "ngay_bat_dau")
-    private java.sql.Date ngayBatDau;
+    private LocalDate ngayBatDau;
 
     @Column(name = "ngay_ket_thuc")
-    private java.sql.Date ngayKetThuc;
+    private LocalDate ngayKetThuc;
 
     @Column(name = "muc_giam_phan_tram")
     private BigDecimal mucGiamPhanTram;

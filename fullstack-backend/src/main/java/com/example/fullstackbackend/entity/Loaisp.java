@@ -12,26 +12,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Table(name = "loaisp")
-public class Loaisp {
+@Table(name = "loai_sp")
+public class LoaiSp {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idlsp;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer idLoaisp;
 
-    @Column(name = "MaLSP")
+    @Column(name = "ma_lsp")
     private String maLsp;
 
-    @Column(name = "TenLSP")
+    @Column(name = "ten_lsp")
     private String tenLsp;
 
-    @Column(name = "TinhTrang")
-    private Integer tinhTrang;
+    @Column(name = "trang_thai")
+    private Integer trangThai;
 
 }

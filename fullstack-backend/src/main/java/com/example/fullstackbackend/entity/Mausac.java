@@ -1,5 +1,6 @@
 package com.example.fullstackbackend.entity;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -11,27 +12,24 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-
-
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity
-@Table(name = "mausac")
-public class Mausac {
+@Table(name = "mau_sac")
+public class MauSac {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idms;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer idMs;
 
-    @Column(name = "MaMS")
+    @Column(name = "ma_ms")
     private String maMs;
 
-    @Column(name = "TenMS")
+    @Column(name = "ten_ms")
     private String tenMs;
 
-    @Column(name = "TinhTrang")
-    private Integer tinhTrang;
+    @Column(name = "trang_thai")
+    private Integer trangThai;
 
 }

@@ -1,5 +1,6 @@
 package com.example.fullstackbackend.entity;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -9,8 +10,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -18,59 +17,61 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity
-@Table(name = "chitietsanpham")
-public class Chitietsanpham {
+@Table(name = "chi_tiet_san_pham")
+public class ChiTietSanPham {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idctsp;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer idCtsp;
 
-    @NotBlank(message = "NotBlank")
-    @Column(name = "MaCTSP")
+    @Column(name = "ma_ctsp")
     private String maCtsp;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "IDCL", referencedColumnName = "IDCL")
-    private Chatlieu idcl;
+    @JoinColumn(name = "id_cl", referencedColumnName = "id_cl")
+    private ChatLieu idCl;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "IDMS", referencedColumnName = "IDMS")
-    private Mausac idms;
+    @JoinColumn(name = "id_ms", referencedColumnName = "id_ms")
+    private MauSac idMs;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "IDSize", referencedColumnName = "IDSize")
+    @JoinColumn(name = "id_size", referencedColumnName = "id_size")
     private Size idSize;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "IDSP", referencedColumnName = "IDSP")
-    private Sanpham idsp;
+    @JoinColumn(name = "id_sp", referencedColumnName = "id_sp")
+    private SanPham idSp;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "IDLSP", referencedColumnName = "IDLSP")
-    private Loaisp idlsp;
+    @JoinColumn(name = "id_lsp", referencedColumnName = "id_lsp")
+    private LoaiSp isLsp;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "IDXX", referencedColumnName = "IDXX")
-    private Xuatxu idxx;
-    @NotBlank(message = "NotBlank")
-    @Column(name = "MoTa")
+    @JoinColumn(name = "id_xx", referencedColumnName = "id_xx")
+    private XuatXu idXx;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_tay_ao", referencedColumnName = "id_tay_ao")
+    private OngTayAo idTayAo;
+
+    @Column(name = "mo_ta")
     private String moTa;
-    @NotNull(message = "NotBlank")
-    @Column(name = "SoLuongTon")
+
+    @Column(name = "so_luong_ton")
     private Integer soLuongTon;
 
-    @NotNull(message = "NotBlank")
-    @Column(name = "GiaNhap")
+    @Column(name = "gia_nhap")
     private BigDecimal giaNhap;
-    @NotNull(message = "NotBlank")
-    @Column(name = "GiaBan")
+
+    @Column(name = "gia_ban")
     private BigDecimal giaBan;
-    @NotNull(message = "NotBlank")
-    @Column(name = "TrangThai")
-    private Integer tinhTrang;
+
+    @Column(name = "trang_thai")
+    private Integer trangThai;
 
 }

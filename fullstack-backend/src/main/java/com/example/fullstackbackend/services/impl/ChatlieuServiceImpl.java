@@ -1,6 +1,6 @@
 package com.example.fullstackbackend.services.impl;
 
-import com.example.fullstackbackend.entity.Chatlieu;
+import com.example.fullstackbackend.entity.ChatLieu;
 import com.example.fullstackbackend.repository.ChatlieuRepository;
 import com.example.fullstackbackend.services.ChatlieuSevice;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,18 +19,18 @@ public class ChatlieuServiceImpl implements ChatlieuSevice {
     private ChatlieuRepository chatlieuRepository;
 
     @Override
-    public List<Chatlieu> getAll() {
+    public List<ChatLieu> getAll() {
         return chatlieuRepository.findAll();
     }
 
     @Override
-    public Page<Chatlieu> chatlieuPage(Integer pageNo, Integer size) {
+    public Page<ChatLieu> ChatlieuPage(Integer pageNo, Integer size) {
         Pageable pageable = PageRequest.of(pageNo, size);
         return chatlieuRepository.findAll(pageable);
     }
 
     @Override
-    public void add(Chatlieu chatlieu) {
+    public void add(ChatLieu chatlieu) {
         chatlieuRepository.save(chatlieu);
     }
 
@@ -40,13 +40,13 @@ public class ChatlieuServiceImpl implements ChatlieuSevice {
     }
 
     @Override
-    public void update(Chatlieu update) {
+    public void update(ChatLieu update) {
         chatlieuRepository.save(update);
     }
 
     @Override
-    public Optional<Chatlieu> detail(Integer id) {
-        Optional<Chatlieu> chatlieu = chatlieuRepository.findById(id);
+    public Optional<ChatLieu> detail(Integer id) {
+        Optional<ChatLieu> chatlieu = chatlieuRepository.findById(id);
         return chatlieu;
     }
 }

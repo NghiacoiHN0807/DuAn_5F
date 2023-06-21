@@ -1,6 +1,6 @@
 package com.example.fullstackbackend.services;
 
-import com.example.fullstackbackend.entity.Xuatxu;
+import com.example.fullstackbackend.entity.XuatXu;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
@@ -8,17 +8,17 @@ import java.util.Optional;
 
 public interface XuatxuSevice {
 
-    List<Xuatxu> getAll();
+    List<XuatXu> getAll();
 
-    Page<Xuatxu> chatlieuPage(Integer pageNo, Integer size);
+    Page<XuatXu> chatlieuPage(Integer pageNo, Integer size);
 
-    Xuatxu add(Xuatxu add);
+    XuatXu add(XuatXu add);
 
     void delete(Integer id);
 
     Boolean checkExists(Integer id);
 
-    Xuatxu update(Xuatxu update);
+    XuatXu update(XuatXu update);
 
-    Optional<Xuatxu> detail(Integer id);
+    Optional<XuatXu> detail(Integer id);
 }

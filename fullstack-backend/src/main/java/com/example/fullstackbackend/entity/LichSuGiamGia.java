@@ -1,5 +1,6 @@
+package com.example.fullstackbackend.entity;
 
-import javax.persistence.*;
+
 
 @Entity
 @Table(name = "lich_su_giam_gia")

@@ -1,6 +1,6 @@
 package com.example.fullstackbackend.services.impl;
 
-import com.example.fullstackbackend.entity.Xuatxu;
+import com.example.fullstackbackend.entity.XuatXu;
 import com.example.fullstackbackend.repository.XuatxuRepository;
 import com.example.fullstackbackend.services.XuatxuSevice;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,18 +20,18 @@ public class XuatxuServiceImpl implements XuatxuSevice {
 
 
     @Override
-    public List<Xuatxu> getAll() {
+    public List<XuatXu> getAll() {
         return xuatxuRepository.findAll();
     }
 
     @Override
-    public Page<Xuatxu> chatlieuPage(Integer pageNo, Integer size) {
+    public Page<XuatXu> chatlieuPage(Integer pageNo, Integer size) {
         Pageable pageable = PageRequest.of(pageNo, size);
         return xuatxuRepository.findAll(pageable);
     }
 
     @Override
-    public Xuatxu add(Xuatxu add) {
+    public XuatXu add(XuatXu add) {
         return xuatxuRepository.save(add);
     }
 
@@ -46,13 +46,13 @@ public class XuatxuServiceImpl implements XuatxuSevice {
     }
 
     @Override
-    public Xuatxu update(Xuatxu update) {
+    public XuatXu update(XuatXu update) {
        return xuatxuRepository.save(update);
     }
 
     @Override
-    public Optional<Xuatxu> detail(Integer id) {
-        Optional<Xuatxu> xuatxu = xuatxuRepository.findById(id);
+    public Optional<XuatXu> detail(Integer id) {
+        Optional<XuatXu> xuatxu = xuatxuRepository.findById(id);
         return xuatxu;
     }
 }

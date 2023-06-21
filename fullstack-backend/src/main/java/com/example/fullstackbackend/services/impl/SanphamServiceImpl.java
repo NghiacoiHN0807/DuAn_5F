@@ -1,6 +1,6 @@
 package com.example.fullstackbackend.services.impl;
 
-import com.example.fullstackbackend.entity.Sanpham;
+import com.example.fullstackbackend.entity.SanPham;
 import com.example.fullstackbackend.repository.SanphamRepository;
 import com.example.fullstackbackend.services.SanPhamSevice;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,18 +19,18 @@ public class SanphamServiceImpl implements SanPhamSevice {
     private SanphamRepository sanphamRepository;
 
     @Override
-    public List<Sanpham> getAll() {
+    public List<SanPham> getAll() {
         return sanphamRepository.findAll();
     }
 
     @Override
-    public Page<Sanpham> chatlieuPage(Integer pageNo, Integer size) {
+    public Page<SanPham> chatlieuPage(Integer pageNo, Integer size) {
         Pageable pageable = PageRequest.of(pageNo, size);
         return sanphamRepository.findAll(pageable);
     }
 
     @Override
-    public void add(Sanpham add) {
+    public void add(SanPham add) {
         sanphamRepository.save(add);
     }
 
@@ -40,13 +40,13 @@ public class SanphamServiceImpl implements SanPhamSevice {
     }
 
     @Override
-    public void update(Sanpham update) {
+    public void update(SanPham update) {
         sanphamRepository.save(update);
     }
 
     @Override
-    public Optional<Sanpham> detail(Integer id) {
-        Optional<Sanpham> xuatxu = sanphamRepository.findById(id);
+    public Optional<SanPham> detail(Integer id) {
+        Optional<SanPham> xuatxu = sanphamRepository.findById(id);
         return xuatxu;
     }
 

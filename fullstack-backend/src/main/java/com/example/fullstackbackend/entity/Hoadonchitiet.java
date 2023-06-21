@@ -1,52 +1,85 @@
 package com.example.fullstackbackend.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-import java.math.BigDecimal;
 
 
-
-@AllArgsConstructor
-@NoArgsConstructor
-@Getter
-@Setter
 @Entity
-@Table(name = "hoadonchitiet")
-public class Hoadonchitiet {
+@Table(name = "hoa_don_chi_tiet")
+public class HoaDonChiTiet {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idhdct;
+    @Column(name = "id_hdct")
+    private Integer idHdct;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "IDHD", referencedColumnName = "IDHD")
-    private Hoadon idhd;
+    @Column(name = "id_hd")
+    private Integer idHd;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "IDCTSP", referencedColumnName = "IDCTSP")
-    private Chitietsanpham idctsp;
+    @Column(name = "id_ctsp")
+    private Integer idCtsp;
 
-    @Column(name = "SoLuong")
+    @Column(name = "so_luong")
     private Integer soLuong;
 
-    @Column(name = "DonGia")
+    @Column(name = "don_gia")
     private BigDecimal donGia;
 
-    @Column(name = "LyDoHuy")
+    @Column(name = "ly_do_huy")
     private String lyDoHuy;
 
-    @Column(name = "TrangThai")
+    @Column(name = "trang_thai")
     private Integer trangThai;
 
+    public Integer getIdHdct() {
+        return this.idHdct;
+    }
+
+    public void setIdHdct(Integer idHdct) {
+        this.idHdct = idHdct;
+    }
+
+    public Integer getIdHd() {
+        return this.idHd;
+    }
+
+    public void setIdHd(Integer idHd) {
+        this.idHd = idHd;
+    }
+
+    public Integer getIdCtsp() {
+        return this.idCtsp;
+    }
+
+    public void setIdCtsp(Integer idCtsp) {
+        this.idCtsp = idCtsp;
+    }
+
+    public Integer getSoLuong() {
+        return this.soLuong;
+    }
+
+    public void setSoLuong(Integer soLuong) {
+        this.soLuong = soLuong;
+    }
+
+    public BigDecimal getDonGia() {
+        return this.donGia;
+    }
+
+    public void setDonGia(BigDecimal donGia) {
+        this.donGia = donGia;
+    }
+
+    public String getLyDoHuy() {
+        return this.lyDoHuy;
+    }
+
+    public void setLyDoHuy(String lyDoHuy) {
+        this.lyDoHuy = lyDoHuy;
+    }
+
+    public Integer getTrangThai() {
+        return this.trangThai;
+    }
+
+    public void setTrangThai(Integer trangThai) {
+        this.trangThai = trangThai;
+    }
 }

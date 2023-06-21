@@ -1,7 +1,7 @@
 package com.example.fullstackbackend.services.impl;
 
 
-import com.example.fullstackbackend.entity.Mausac;
+import com.example.fullstackbackend.entity.MauSac;
 import com.example.fullstackbackend.repository.MausacRepository;
 import com.example.fullstackbackend.services.MausacSevice;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,18 +20,18 @@ public class MausacServiceImpl implements MausacSevice {
     private MausacRepository mausacRepository;
 
     @Override
-    public List<Mausac> getAll() {
+    public List<MauSac> getAll() {
         return mausacRepository.findAll();
     }
 
     @Override
-    public Page<Mausac> chatlieuPage(Integer pageNo, Integer size) {
+    public Page<MauSac> chatlieuPage(Integer pageNo, Integer size) {
         Pageable pageable = PageRequest.of(pageNo, size);
         return mausacRepository.findAll(pageable);
     }
 
     @Override
-    public void add(Mausac add) {
+    public void add(MauSac add) {
         mausacRepository.save(add);
     }
 
@@ -41,13 +41,13 @@ public class MausacServiceImpl implements MausacSevice {
     }
 
     @Override
-    public void update(Mausac update) {
+    public void update(MauSac update) {
         mausacRepository.save(update);
     }
 
     @Override
-    public Optional<Mausac> detail(Integer id) {
-        Optional<Mausac> mausac = mausacRepository.findById(id);
+    public Optional<MauSac> detail(Integer id) {
+        Optional<MauSac> mausac = mausacRepository.findById(id);
         return mausac;
     }
 

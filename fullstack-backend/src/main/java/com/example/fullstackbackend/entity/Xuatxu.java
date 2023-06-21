@@ -1,39 +1,35 @@
 package com.example.fullstackbackend.entity;
 
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity
-@Table(name = "xuatxu")
-public class Xuatxu {
+@Table(name = "xuat_xu")
+public class XuatXu {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idxx;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer idXx;
 
-    @NotBlank(message = "NotBlank")
-    @Column(name = "MaXX")
+    @Column(name = "ma_xx")
     private String maXx;
-    @NotBlank(message = "NotBlank")
-    @Column(name = "TenNuoc")
-    private String tenNuoc;
-    @NotNull(message = "NotBlank")
-    @Column(name = "TinhTrang")
-    private Integer tinhTrang;
 
+    @Column(name = "ten_nuoc")
+    private String tenNuoc;
+
+    @Column(name = "tinh_trang")
+    private Integer tinhTrang;
+    
 }

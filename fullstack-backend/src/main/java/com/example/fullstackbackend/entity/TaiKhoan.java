@@ -1,11 +1,26 @@
+package com.example.fullstackbackend.entity;
 
-import javax.persistence.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Table(name = "tai_khoan")
 public class TaiKhoan {
     @Id
-    @Column(name = "id_tai_khoan")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idTaiKhoan;
 
     @Column(name = "id_dia_chi")
@@ -38,91 +53,4 @@ public class TaiKhoan {
     @Column(name = "trang_thai")
     private Integer trangThai;
 
-    public Integer getIdTaiKhoan() {
-        return this.idTaiKhoan;
-    }
-
-    public void setIdTaiKhoan(Integer idTaiKhoan) {
-        this.idTaiKhoan = idTaiKhoan;
-    }
-
-    public Integer getIdDiaChi() {
-        return this.idDiaChi;
-    }
-
-    public void setIdDiaChi(Integer idDiaChi) {
-        this.idDiaChi = idDiaChi;
-    }
-
-    public String getMaTaiKhoan() {
-        return this.maTaiKhoan;
-    }
-
-    public void setMaTaiKhoan(String maTaiKhoan) {
-        this.maTaiKhoan = maTaiKhoan;
-    }
-
-    public String getHo() {
-        return this.ho;
-    }
-
-    public void setHo(String ho) {
-        this.ho = ho;
-    }
-
-    public String getTen() {
-        return this.ten;
-    }
-
-    public void setTen(String ten) {
-        this.ten = ten;
-    }
-
-    public String getSdt() {
-        return this.sdt;
-    }
-
-    public void setSdt(String sdt) {
-        this.sdt = sdt;
-    }
-
-    public String getEmail() {
-        return this.email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getMatKhau() {
-        return this.matKhau;
-    }
-
-    public void setMatKhau(String matKhau) {
-        this.matKhau = matKhau;
-    }
-
-    public Integer getChucVu() {
-        return this.chucVu;
-    }
-
-    public void setChucVu(Integer chucVu) {
-        this.chucVu = chucVu;
-    }
-
-    public Integer getQuyenVu() {
-        return this.quyenVu;
-    }
-
-    public void setQuyenVu(Integer quyenVu) {
-        this.quyenVu = quyenVu;
-    }
-
-    public Integer getTrangThai() {
-        return this.trangThai;
-    }
-
-    public void setTrangThai(Integer trangThai) {
-        this.trangThai = trangThai;
-    }
 }

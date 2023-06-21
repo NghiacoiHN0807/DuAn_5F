@@ -1,6 +1,6 @@
 package com.example.fullstackbackend.services;
 
-import com.example.fullstackbackend.entity.Loaisp;
+import com.example.fullstackbackend.entity.LoaiSp;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
@@ -8,14 +8,15 @@ import java.util.Optional;
 
 public interface LoaispSevice {
 
-    List<Loaisp> getAll();
-    Page<Loaisp> chatlieuPage(Integer pageNo, Integer size);
+    List<LoaiSp> getAll();
 
-    void add(Loaisp add);
+    Page<LoaiSp> chatlieuPage(Integer pageNo, Integer size);
+
+    void add(LoaiSp add);
 
     void delete(Integer id);
 
-    void update(Loaisp update);
+    void update(LoaiSp update);
 
-    Optional<Loaisp> detail(Integer id);
+    Optional<LoaiSp> detail(Integer id);
 }

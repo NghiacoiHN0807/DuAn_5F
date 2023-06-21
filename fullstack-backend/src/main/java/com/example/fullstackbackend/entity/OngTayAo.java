@@ -1,51 +1,35 @@
+package com.example.fullstackbackend.entity;
 
-import javax.persistence.*;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 @Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Table(name = "ong_tay_ao")
 public class OngTayAo {
     @Id
-    @Column(name = "id_ong_tay")
-    private Integer idOngTay;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer idTayAo;
 
-    @Column(name = "ma_ong_tay")
-    private String maOngTay;
+    @Column(name = "ma_tay_ao")
+    private String maTayAo;
 
-    @Column(name = "loai_ong_tay")
-    private String loaiOngTay;
+    @Column(name = "loai_tay_ao")
+    private String loaiTayAo;
 
     @Column(name = "trang_thai")
     private Integer trangThai;
 
-    public Integer getIdOngTay() {
-        return this.idOngTay;
-    }
-
-    public void setIdOngTay(Integer idOngTay) {
-        this.idOngTay = idOngTay;
-    }
-
-    public String getMaOngTay() {
-        return this.maOngTay;
-    }
-
-    public void setMaOngTay(String maOngTay) {
-        this.maOngTay = maOngTay;
-    }
-
-    public String getLoaiOngTay() {
-        return this.loaiOngTay;
-    }
-
-    public void setLoaiOngTay(String loaiOngTay) {
-        this.loaiOngTay = loaiOngTay;
-    }
-
-    public Integer getTrangThai() {
-        return this.trangThai;
-    }
-
-    public void setTrangThai(Integer trangThai) {
-        this.trangThai = trangThai;
-    }
 }

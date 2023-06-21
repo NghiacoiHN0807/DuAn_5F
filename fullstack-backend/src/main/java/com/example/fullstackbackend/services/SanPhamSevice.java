@@ -1,6 +1,6 @@
 package com.example.fullstackbackend.services;
 
-import com.example.fullstackbackend.entity.Sanpham;
+import com.example.fullstackbackend.entity.SanPham;
 import org.springframework.data.domain.Page;
 
 import java.util.List;
@@ -8,14 +8,15 @@ import java.util.Optional;
 
 public interface SanPhamSevice {
 
-    List<Sanpham> getAll();
-    Page<Sanpham> chatlieuPage(Integer pageNo, Integer size);
+    List<SanPham> getAll();
 
-    void add(Sanpham add);
+    Page<SanPham> chatlieuPage(Integer pageNo, Integer size);
+
+    void add(SanPham add);
 
     void delete(Integer id);
 
-    void update(Sanpham update);
+    void update(SanPham update);
 
-    Optional<Sanpham> detail(Integer id);
+    Optional<SanPham> detail(Integer id);
 }

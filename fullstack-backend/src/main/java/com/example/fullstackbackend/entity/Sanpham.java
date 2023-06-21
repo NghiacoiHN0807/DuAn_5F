@@ -7,33 +7,29 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-
-
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity
-@Table(name = "sanpham")
-public class Sanpham {
+@Table(name = "san_pham")
+public class SanPham {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idsp;
-    @NotBlank(message = "NotBlank")
-    @Column(name = "MaSP")
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Integer idSp;
+
+    @Column(name = "ma_sp")
     private String maSp;
-    @NotBlank(message = "NotBlank")
-    @Column(name = "TenSp")
+
+    @Column(name = "ten_sp")
     private String tenSp;
-    @NotNull(message = "NotBlank")
-    @Column(name = "TinhTrang")
+
+    @Column(name = "tinh_trang")
     private Integer tinhTrang;
 
 }
