@@ -16,7 +16,7 @@ const TableXuatXu = (props) => {
     setIsShowModalAddNew(false);
     setIsShowModalDelete(false);
   };
-  // Show Data On Tables
+
   useEffect(() => {
     getXanXuat(0);
   }, []);
