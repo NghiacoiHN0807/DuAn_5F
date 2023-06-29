@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b6f190c9-4df1-4801-943d-fb1ac0c59ad2" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../fullstack-fontend" beforeDir="false" afterPath="$PROJECT_DIR$/../fullstack-fontend" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="isToolWindowVisible" value="false" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2Qx3Ds8qUQ8omIXm0hNn3L5MbWj" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/TRONG NGHIA/OneDrive/Documents/DuAn_5F/fullstack-backend/src/main/java/com/example/fullstackbackend/entity&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;912882fffb2a598fe55c4ab61608d4d9&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\TRONG NGHIA\OneDrive\Documents\DuAn_5F\fullstack-backend\src\main\java\com\example\fullstackbackend" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="FullstackBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="fullstack-backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.fullstackbackend.FullstackBackendApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b6f190c9-4df1-4801-943d-fb1ac0c59ad2" name="Changes" comment="" />
+      <created>1686281290370</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686281290370</updated>
+      <workItem from="1686281291710" duration="1795000" />
+      <workItem from="1686292797019" duration="32000" />
+      <workItem from="1686293498771" duration="2119000" />
+      <workItem from="1686363697262" duration="2776000" />
+      <workItem from="1686372996448" duration="2591000" />
+      <workItem from="1686387622732" duration="5050000" />
+      <workItem from="1686492780966" duration="33000" />
+      <workItem from="1686495194517" duration="1545000" />
+      <workItem from="1686539085551" duration="682000" />
+      <workItem from="1686580227271" duration="2151000" />
+      <workItem from="1686623157306" duration="1787000" />
+      <workItem from="1686667088840" duration="1917000" />
+      <workItem from="1686706295284" duration="887000" />
+      <workItem from="1686710975934" duration="2589000" />
+      <workItem from="1686735574326" duration="685000" />
+      <workItem from="1686746935242" duration="286000" />
+      <workItem from="1686748164008" duration="394000" />
+      <workItem from="1686795391725" duration="1785000" />
+      <workItem from="1686838859794" duration="472000" />
+      <workItem from="1686881050849" duration="1672000" />
+      <workItem from="1686971887870" duration="2256000" />
+      <workItem from="1686995738105" duration="2023000" />
+      <workItem from="1687014554332" duration="622000" />
+      <workItem from="1687055280781" duration="32000" />
+      <workItem from="1687314646146" duration="42000" />
+      <workItem from="1687314726400" duration="100000" />
+      <workItem from="1687316861562" duration="2945000" />
+      <workItem from="1687349339732" duration="5319000" />
+      <workItem from="1687358104460" duration="1558000" />
+      <workItem from="1687530913436" duration="1151000" />
+      <workItem from="1687692576123" duration="14000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
